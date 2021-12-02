@@ -35,7 +35,7 @@ class TabBar: UITabBarController {
     
     func setupVCs() {
             viewControllers = [
-                createNavController(for: ViewController(),
+                createNavController(for: AuthVC(),
                                        title: NSLocalizedString("Home", comment: ""),
                                        image: UIImage(systemName: "house")!),
                 createNavController(for: ViewController(),
