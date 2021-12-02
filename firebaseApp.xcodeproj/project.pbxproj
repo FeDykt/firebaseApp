@@ -20,6 +20,7 @@
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
 		BF885D7E275960EF00482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D7D275960EF00482A7E /* AuthVC.swift */; };
+		BF885D852759634C00482A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF885D842759634C00482A7E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		BF885D7227595C9E00482A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF885D7D275960EF00482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		BF885D842759634C00482A7E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D4BBECC5032D13A942565008 /* Pods-firebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.release.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				BF885D832759612A00482A7E /* Support */,
 				BF885D7F275960F300482A7E /* View */,
 				BF885D652759582600482A7E /* Assets.xcassets */,
+				BF885D842759634C00482A7E /* Main.storyboard */,
 				BF885D672759582600482A7E /* LaunchScreen.storyboard */,
 				BF885D6A2759582600482A7E /* Info.plist */,
 				BF885D7227595C9E00482A7E /* GoogleService-Info.plist */,
@@ -217,6 +220,7 @@
 				BF885D692759582600482A7E /* LaunchScreen.storyboard in Resources */,
 				BF885D7327595C9F00482A7E /* GoogleService-Info.plist in Resources */,
 				BF885D662759582600482A7E /* Assets.xcassets in Resources */,
+				BF885D852759634C00482A7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
