@@ -19,7 +19,7 @@
 		BF885D7827595D3A00482A7E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7727595D3A00482A7E /* FirebaseDatabase */; };
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
-		BF885D7E275960EF00482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D7D275960EF00482A7E /* AuthVC.swift */; };
+		BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D8C27597DD900482A7E /* AuthVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		BF885D6A2759582600482A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		BF885D7227595C9E00482A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BF885D7D275960EF00482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		BF885D8C27597DD900482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		D4BBECC5032D13A942565008 /* Pods-firebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.release.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,7 +115,7 @@
 		BF885D80275960F700482A7E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				BF885D7D275960EF00482A7E /* AuthVC.swift */,
+				BF885D8C27597DD900482A7E /* AuthVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 				BF885D552759582500482A7E /* Sources */,
 				BF885D562759582500482A7E /* Frameworks */,
 				BF885D572759582500482A7E /* Resources */,
-				9DB8DA0A9886C34F8944C67F /* [CP] Embed Pods Frameworks */,
+				9E05ADEB705A4B133D39EBAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,7 +245,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9DB8DA0A9886C34F8944C67F /* [CP] Embed Pods Frameworks */ = {
+		9E05ADEB705A4B133D39EBAA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF885D7E275960EF00482A7E /* AuthVC.swift in Sources */,
+				BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */,
 				BF885D612759582500482A7E /* ViewController.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,

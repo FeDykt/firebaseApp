@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBar: UITabBarController {
 
@@ -15,6 +16,7 @@ class TabBar: UITabBarController {
            tabBar.tintColor = .label
         
            setupVCs()
+        
     }
 
     fileprivate func createNavController(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
@@ -29,16 +31,17 @@ class TabBar: UITabBarController {
         let textAttributes = [NSAttributedString.Key.font: UIFont(name: "SignPainter", size: 36)!]
         logo.tintColor = .black
         logo.setTitleTextAttributes(textAttributes, for: .normal)
-        logo.setTitleTextAttributes(textAttributes, for: .selected)
+        logo.setTitleTextAttributes(textAttributes, for: .highlighted)
         rootViewController.navigationItem.leftBarButtonItem = logo
     }
+
     
     func setupVCs() {
             viewControllers = [
-                createNavController(for: AuthVC(),
+                createNavController(for: ViewController(),
                                        title: NSLocalizedString("Home", comment: ""),
                                        image: UIImage(systemName: "house")!),
-                createNavController(for: ViewController(),
+                createNavController(for: AuthVC(),
                                        title: NSLocalizedString("Search", comment: ""),
                                        image: UIImage(systemName: "magnifyingglass")!),
                 createNavController(for: ViewController(),
