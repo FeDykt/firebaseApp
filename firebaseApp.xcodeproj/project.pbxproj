@@ -20,6 +20,7 @@
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
 		BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D8C27597DD900482A7E /* AuthVC.swift */; };
+		BFE8DBFF275A6E350006AB05 /* AuthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DBFE275A6E350006AB05 /* AuthTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		BF885D7227595C9E00482A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF885D8C27597DD900482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		BFE8DBFE275A6E350006AB05 /* AuthTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTest.swift; sourceTree = "<group>"; };
 		D4BBECC5032D13A942565008 /* Pods-firebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.release.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				BF885D8C27597DD900482A7E /* AuthVC.swift */,
+				BFE8DBFE275A6E350006AB05 /* AuthTest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
 				BF885D712759588400482A7E /* TabBar.swift in Sources */,
+				BFE8DBFF275A6E350006AB05 /* AuthTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

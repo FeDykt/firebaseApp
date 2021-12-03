@@ -21,10 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let mainVC = TabBar()
         let authVC = AuthVC()
+        let authTest = AuthTest()
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if user == nil {
-                self.window?.rootViewController = authVC
+                self.window?.rootViewController = authTest
+                
             } else {
                 self.window?.rootViewController = mainVC
             }
