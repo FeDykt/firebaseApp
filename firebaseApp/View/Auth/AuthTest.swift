@@ -67,6 +67,7 @@ class AuthTest: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error == nil {
                 if let result = result {
+                    print("userID: \(result.user.uid)")
                     let ref = Database.database().reference().child("users")
                     ref.child(result.user.uid).updateChildValues(["name" : name, "email": email])
                     self.dismiss(animated: true, completion: nil)
@@ -185,3 +186,4 @@ extension AuthTest: UITextFieldDelegate {
         return true
     }
 }
+

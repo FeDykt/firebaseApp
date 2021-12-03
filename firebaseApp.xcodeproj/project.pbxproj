@@ -14,13 +14,17 @@
 		BF885D662759582600482A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF885D652759582600482A7E /* Assets.xcassets */; };
 		BF885D692759582600482A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF885D672759582600482A7E /* LaunchScreen.storyboard */; };
 		BF885D712759588400482A7E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D702759588400482A7E /* TabBar.swift */; };
-		BF885D7327595C9F00482A7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF885D7227595C9E00482A7E /* GoogleService-Info.plist */; };
 		BF885D7627595D3A00482A7E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7527595D3A00482A7E /* FirebaseAuth */; };
 		BF885D7827595D3A00482A7E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7727595D3A00482A7E /* FirebaseDatabase */; };
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
 		BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D8C27597DD900482A7E /* AuthVC.swift */; };
 		BFE8DBFF275A6E350006AB05 /* AuthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DBFE275A6E350006AB05 /* AuthTest.swift */; };
+		BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC01275A7C210006AB05 /* TableViewController.swift */; };
+		BFE8DC04275A7E2B0006AB05 /* FBstorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC03275A7E2B0006AB05 /* FBstorage.swift */; };
+		BFE8DC07275A8B130006AB05 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC05275A8B130006AB05 /* TestTableViewCell.swift */; };
+		BFE8DC08275A8B130006AB05 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC06275A8B130006AB05 /* TestTableViewCell.xib */; };
+		BFE8DC0A275A98D80006AB05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +37,13 @@
 		BF885D682759582600482A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF885D6A2759582600482A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		BF885D7227595C9E00482A7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF885D8C27597DD900482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		BFE8DBFE275A6E350006AB05 /* AuthTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTest.swift; sourceTree = "<group>"; };
+		BFE8DC01275A7C210006AB05 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BFE8DC03275A7E2B0006AB05 /* FBstorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBstorage.swift; sourceTree = "<group>"; };
+		BFE8DC05275A8B130006AB05 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		BFE8DC06275A8B130006AB05 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
+		BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4BBECC5032D13A942565008 /* Pods-firebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.release.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,8 +106,8 @@
 				BF885D7F275960F300482A7E /* View */,
 				BF885D652759582600482A7E /* Assets.xcassets */,
 				BF885D672759582600482A7E /* LaunchScreen.storyboard */,
+				BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */,
 				BF885D6A2759582600482A7E /* Info.plist */,
-				BF885D7227595C9E00482A7E /* GoogleService-Info.plist */,
 			);
 			path = firebaseApp;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 		BF885D7F275960F300482A7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFE8DC00275A7C050006AB05 /* TableView */,
 				BF885D822759610C00482A7E /* Tabbar */,
 				BF885D80275960F700482A7E /* Auth */,
 				BF885D81275960FF00482A7E /* Main */,
@@ -146,6 +155,17 @@
 				BF885D5E2759582500482A7E /* SceneDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		BFE8DC00275A7C050006AB05 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BFE8DC01275A7C210006AB05 /* TableViewController.swift */,
+				BFE8DC05275A8B130006AB05 /* TestTableViewCell.swift */,
+				BFE8DC06275A8B130006AB05 /* TestTableViewCell.xib */,
+				BFE8DC03275A7E2B0006AB05 /* FBstorage.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF885D692759582600482A7E /* LaunchScreen.storyboard in Resources */,
-				BF885D7327595C9F00482A7E /* GoogleService-Info.plist in Resources */,
+				BFE8DC08275A8B130006AB05 /* TestTableViewCell.xib in Resources */,
 				BF885D662759582600482A7E /* Assets.xcassets in Resources */,
+				BFE8DC0A275A98D80006AB05 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,11 +294,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */,
+				BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */,
+				BFE8DC07275A8B130006AB05 /* TestTableViewCell.swift in Sources */,
 				BF885D612759582500482A7E /* ViewController.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
 				BF885D712759588400482A7E /* TabBar.swift in Sources */,
 				BFE8DBFF275A6E350006AB05 /* AuthTest.swift in Sources */,
+				BFE8DC04275A7E2B0006AB05 /* FBstorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
