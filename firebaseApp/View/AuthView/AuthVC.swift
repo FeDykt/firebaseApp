@@ -9,15 +9,19 @@ import Foundation
 import UIKit
 import SnapKit
 import Firebase
+import FirebaseStorage
 
 class AuthVC: UIViewController {
-    var stackViewVertical = UIStackView()
+    let stackViewVertical = UIStackView()
     var labelLogin        = UILabel()
-    var textFieldLogin    = UITextField()
-    var textFieldEmail    = UITextField()
-    var textFieldPassword = UITextField()
-    var buttonUpload      = UIButton()
-    var buttonSwitch      = UIButton()
+    let textFieldLogin    = UITextField()
+    let textFieldEmail    = UITextField()
+    let textFieldPassword = UITextField()
+    let buttonUpload      = UIButton()
+    let buttonSwitch      = UIButton()
+    static let imagePicker       = UIImageView()
+    let imagePickerButton = UIButton()
+    
     
     var signUp = true {
         willSet {
@@ -54,47 +58,6 @@ class AuthVC: UIViewController {
         
     }
     
-    //MARK: objc metods
-    
-    @objc func switchAction() {
-        signUp = !signUp
-    }
-    
-    @objc func signUpAction() {
-        let name = textFieldLogin.text!
-        let email = textFieldEmail.text!
-        let password = textFieldPassword.text!
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if error == nil {
-                if let result = result {
-                    print("userID: \(result.user.uid)")
-                    let ref = Database.database().reference().child("users")
-                    ref.child(result.user.uid).updateChildValues(["name" : name, "email": email])
-                    self.dismiss(animated: true, completion: nil)
-                }
-            } else {
-                print("error: \(String(describing: error))")
-            }
-        }
-    }
-    
-    @objc func signIn() {
-        let email = textFieldEmail.text!
-        let password = textFieldPassword.text!
-        
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if error == nil {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-    @objc func exitButton() {
-                do {
-                    try Auth.auth().signOut()
-                } catch {
-                    print(error)
-                }
-    }
     
     func navBarButtons() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Exit", style: .plain, target: self, action: #selector(exitButton))
@@ -134,8 +97,18 @@ class AuthVC: UIViewController {
         buttonSwitch.setTitle("Есть профиль?", for: .normal)
         buttonSwitch.addTarget(self, action: #selector(switchAction), for: .touchUpInside)
         
+        //MARK: imagePicker
+        imagePickerButton.setTitle("check photo", for: .normal)
+        imagePickerButton.configuration = .tinted()
+        imagePickerButton.addTarget(self, action: #selector(imagePickerAction), for: .touchUpInside)
+        
+        AuthVC.imagePicker.image = UIImage(systemName: "person")
+    
+                
         //MARK: ADD subviews
         view.addSubview(stackViewVertical)
+        stackViewVertical.addArrangedSubview(AuthVC.imagePicker)
+        stackViewVertical.addArrangedSubview(imagePickerButton)
         stackViewVertical.addArrangedSubview(labelLogin)
         stackViewVertical.addArrangedSubview(textFieldLogin)
         stackViewVertical.addArrangedSubview(textFieldEmail)
@@ -149,6 +122,9 @@ class AuthVC: UIViewController {
             make.centerX.centerY.equalToSuperview()
             make.left.right.equalToSuperview().inset(30)
         }
+        AuthVC.imagePicker.snp.makeConstraints { make in
+            make.width.height.equalTo(80)
+        }
         textFieldLogin.snp.makeConstraints { make in
             make.width.equalToSuperview()
             
@@ -161,6 +137,92 @@ class AuthVC: UIViewController {
         }
     }
     
+}
+
+//MARK: objc metods
+extension AuthVC {
+    
+    @objc func switchAction() {
+        signUp = !signUp
+    }
+    
+    func uploadImage(currentUserId: String , photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void ) {
+        let storageRef = Storage.storage().reference().child("avatars").child(currentUserId)
+        guard let imageData = AuthVC.imagePicker.image?.jpegData(compressionQuality: 0.4) else { return }
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metadata, error in
+            guard let _ = metadata else { completion(.failure(error!)); return }
+            storageRef.downloadURL { url, error in
+                guard let url = url else { completion(.failure(error!)); return }
+                completion(.success(url))
+            }
+        }
+        
+    }
+    
+    @objc func signUpAction() {
+        let name = textFieldLogin.text!
+        let email = textFieldEmail.text!
+        let password = textFieldPassword.text!
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if error == nil {
+                if let result = result {
+                    self.uploadImage(currentUserId: result.user.uid, photo: AuthVC.imagePicker.image!) { AvatarResult in
+                        switch AvatarResult {
+                        case .success(let url):
+                            let userAvatar = url.absoluteString
+                            
+                            let ref = Database.database().reference().child("users")
+                            ref.child(result.user.uid).updateChildValues(["name" : name, "email": email, "avatar": userAvatar])
+                            self.dismiss(animated: true, completion: nil)
+                        case .failure(let error):
+                            print("error avatar create \(error)")
+                        }
+                    }
+                    
+                    
+                }
+            } else {
+                print("error: \(String(describing: error))")
+            }
+        }
+    }
+    
+    @objc func signIn() {
+        let email = textFieldEmail.text!
+        let password = textFieldPassword.text!
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error == nil {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    @objc func exitButton() {
+                do {
+                    try Auth.auth().signOut()
+                } catch {
+                    print(error)
+                }
+    }
+    
+    @objc func imagePickerAction() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
+}
+
+extension AuthVC:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        AuthVC.imagePicker.image = image
+    }
 }
 
 extension AuthVC: UITextFieldDelegate {

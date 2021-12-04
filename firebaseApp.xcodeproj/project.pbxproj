@@ -145,10 +145,18 @@
 			isa = PBXGroup;
 			children = (
 				BFE8DC01275A7C210006AB05 /* TableViewController.swift */,
+				BFE8DC0F275AEE310006AB05 /* TableViewCell */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		BFE8DC0F275AEE310006AB05 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */,
 				BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */,
 			);
-			path = MainView;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

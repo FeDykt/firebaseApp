@@ -42,8 +42,12 @@ class PostTableViewCell: UITableViewCell {
         let imageData = try! Data(contentsOf: imageUrl)
         let image = UIImage(data: imageData)
         
+        let avatarUrl = URL(string: model.avatar)!
+        let avatarData = try! Data(contentsOf: avatarUrl)
+        let avatar = UIImage(data: avatarData)
+        
         self.postImage.image = image
-        self.userImage.image = image
+        self.userImage.image = avatar
         self.userName.text = model.name
     }
     
