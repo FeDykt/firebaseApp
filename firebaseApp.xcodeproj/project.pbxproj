@@ -10,7 +10,6 @@
 		AC821133F36DB2B822EB5A69 /* Pods_firebaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */; };
 		BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D5C2759582500482A7E /* AppDelegate.swift */; };
 		BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D5E2759582500482A7E /* SceneDelegate.swift */; };
-		BF885D612759582500482A7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D602759582500482A7E /* ViewController.swift */; };
 		BF885D662759582600482A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF885D652759582600482A7E /* Assets.xcassets */; };
 		BF885D692759582600482A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF885D672759582600482A7E /* LaunchScreen.storyboard */; };
 		BF885D712759588400482A7E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D702759588400482A7E /* TabBar.swift */; };
@@ -19,9 +18,7 @@
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
 		BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D8C27597DD900482A7E /* AuthVC.swift */; };
-		BFE8DBFF275A6E350006AB05 /* AuthTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DBFE275A6E350006AB05 /* AuthTest.swift */; };
 		BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC01275A7C210006AB05 /* TableViewController.swift */; };
-		BFE8DC04275A7E2B0006AB05 /* FBstorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC03275A7E2B0006AB05 /* FBstorage.swift */; };
 		BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */; };
 		BFE8DC08275A8B130006AB05 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */; };
 		BFE8DC0A275A98D80006AB05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */; };
@@ -32,15 +29,12 @@
 		BF885D592759582500482A7E /* firebaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF885D5C2759582500482A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF885D5E2759582500482A7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF885D602759582500482A7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF885D652759582600482A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF885D682759582600482A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF885D6A2759582600482A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		BF885D8C27597DD900482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
-		BFE8DBFE275A6E350006AB05 /* AuthTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTest.swift; sourceTree = "<group>"; };
 		BFE8DC01275A7C210006AB05 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		BFE8DC03275A7E2B0006AB05 /* FBstorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBstorage.swift; sourceTree = "<group>"; };
 		BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -115,29 +109,18 @@
 		BF885D7F275960F300482A7E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BFE8DC00275A7C050006AB05 /* TableView */,
-				BF885D822759610C00482A7E /* Tabbar */,
-				BF885D80275960F700482A7E /* Auth */,
-				BF885D81275960FF00482A7E /* Main */,
+				BFE8DC00275A7C050006AB05 /* MainView */,
+				BF885D80275960F700482A7E /* AuthView */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		BF885D80275960F700482A7E /* Auth */ = {
+		BF885D80275960F700482A7E /* AuthView */ = {
 			isa = PBXGroup;
 			children = (
 				BF885D8C27597DD900482A7E /* AuthVC.swift */,
-				BFE8DBFE275A6E350006AB05 /* AuthTest.swift */,
 			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		BF885D81275960FF00482A7E /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				BF885D602759582500482A7E /* ViewController.swift */,
-			);
-			path = Main;
+			path = AuthView;
 			sourceTree = "<group>";
 		};
 		BF885D822759610C00482A7E /* Tabbar */ = {
@@ -153,19 +136,19 @@
 			children = (
 				BF885D5C2759582500482A7E /* AppDelegate.swift */,
 				BF885D5E2759582500482A7E /* SceneDelegate.swift */,
+				BF885D822759610C00482A7E /* Tabbar */,
 			);
 			path = Support;
 			sourceTree = "<group>";
 		};
-		BFE8DC00275A7C050006AB05 /* TableView */ = {
+		BFE8DC00275A7C050006AB05 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				BFE8DC01275A7C210006AB05 /* TableViewController.swift */,
 				BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */,
 				BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */,
-				BFE8DC03275A7E2B0006AB05 /* FBstorage.swift */,
 			);
-			path = TableView;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,12 +279,9 @@
 				BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */,
 				BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */,
 				BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */,
-				BF885D612759582500482A7E /* ViewController.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
 				BF885D712759588400482A7E /* TabBar.swift in Sources */,
-				BFE8DBFF275A6E350006AB05 /* AuthTest.swift in Sources */,
-				BFE8DC04275A7E2B0006AB05 /* FBstorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

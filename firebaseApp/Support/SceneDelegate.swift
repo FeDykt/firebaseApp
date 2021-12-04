@@ -22,11 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.translatesAutoresizingMaskIntoConstraints = false
         let mainVC = TabBar()
         let authVC = AuthVC()
-        let authTest = AuthTest()
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if user == nil {
-                self.window?.rootViewController = authTest
+                self.window?.rootViewController = authVC
                 
             } else {
                 self.window?.rootViewController = mainVC

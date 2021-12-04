@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Firebase
 
-class AuthTest: UIViewController {
+class AuthVC: UIViewController {
     var stackViewVertical = UIStackView()
     var labelLogin        = UILabel()
     var textFieldLogin    = UITextField()
@@ -163,7 +163,7 @@ class AuthTest: UIViewController {
     
 }
 
-extension AuthTest: UITextFieldDelegate {
+extension AuthVC: UITextFieldDelegate {
     func showAlert() {
         let alert = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
@@ -171,9 +171,6 @@ extension AuthTest: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let name = textFieldLogin.text!
-        let email = textFieldEmail.text!
-        let password = textFieldPassword.text!
 
         if textField == textFieldLogin {
             textField.resignFirstResponder()
