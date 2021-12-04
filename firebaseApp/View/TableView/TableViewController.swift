@@ -10,7 +10,6 @@ import Firebase
 
 struct Model {
     var name: String
-    var email: String
     var image: String
 }
 
@@ -24,11 +23,8 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         
         createTableView()
-//        getDataFB()
         getAllData()
-
-        
-        
+ 
         view.backgroundColor = .white
  
     }
@@ -37,7 +33,7 @@ class TableViewController: UIViewController {
         self.tableView = UITableView(frame: view.bounds, style: .plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        tableView.register(TestTableViewCell.nib(), forCellReuseIdentifier: TestTableViewCell.identifier)
+        tableView.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         view.addSubview(tableView)
     }
     
@@ -46,16 +42,11 @@ class TableViewController: UIViewController {
         ref.observe(.childAdded) { [weak self] snapshot in
             guard let self = self else { return }
             
-            guard let key = snapshot.key as? String else { return }
-            guard let value = snapshot.value as? [String : Any] else { print("erororor"); return }
+            guard let value = snapshot.value as? [String : Any] else { print("error value"); return }
             
-            if let email = value["email"] as? String, let image = value["image"] as? String, let name = value["name"] as? String {
-                let modelData = Model(name: name, email: email, image: image)
+            if let image = value["image"] as? String, let name = value["name"] as? String {
+                let modelData = Model(name: name, image: image)
                 self.model.append(modelData)
-                self.tableView.reloadData()
-                
-            } else {
-                print("erroror")
             }
             
             self.tableView.reloadData()
@@ -70,8 +61,12 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TestTableViewCell.identifier, for: indexPath) as! TestTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
         cell.configure(model[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
     }
 }
