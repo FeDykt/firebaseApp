@@ -1,5 +1,5 @@
 # ![appIcon](https://user-images.githubusercontent.com/16240094/144761366-6df9a414-7ef6-4890-8f50-beab212d70bf.png) 
-# firebaseApp - cloneInstagram app
+firebaseApp - cloneInstagram app
 
 Screenshots: 
 ****
