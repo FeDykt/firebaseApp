@@ -75,9 +75,14 @@ class AuthVC: UIViewController {
         labelLogin.text = "Registration"
         
         //MARK: TextFields Setting
-        textFieldEmail.borderStyle = .roundedRect
         textFieldLogin.borderStyle = .roundedRect
+        textFieldLogin.autocorrectionType = .no
+        textFieldEmail.borderStyle = .roundedRect
+        textFieldEmail.keyboardType = .emailAddress
+        textFieldEmail.autocorrectionType = .no
         textFieldPassword.borderStyle = .roundedRect
+        textFieldPassword.autocorrectionType = .no
+        textFieldPassword.isSecureTextEntry = true
         
         //MARK: return key type
         textFieldLogin.returnKeyType = .next
@@ -107,6 +112,7 @@ class AuthVC: UIViewController {
                 
         //MARK: ADD subviews
         view.addSubview(stackViewVertical)
+        stackViewVertical.addArrangedSubview(buttonSwitch)
         stackViewVertical.addArrangedSubview(AuthVC.imagePicker)
         stackViewVertical.addArrangedSubview(imagePickerButton)
         stackViewVertical.addArrangedSubview(labelLogin)
@@ -114,7 +120,7 @@ class AuthVC: UIViewController {
         stackViewVertical.addArrangedSubview(textFieldEmail)
         stackViewVertical.addArrangedSubview(textFieldPassword)
         stackViewVertical.addArrangedSubview(buttonUpload)
-        stackViewVertical.addArrangedSubview(buttonSwitch)
+        
     }
     
     func settingConstrains() {
@@ -167,39 +173,45 @@ extension AuthVC {
         let email = textFieldEmail.text!
         let password = textFieldPassword.text!
         
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if error == nil {
-                if let result = result {
-                    self.uploadImage(currentUserId: result.user.uid, photo: AuthVC.imagePicker.image!) { AvatarResult in
-                        switch AvatarResult {
-                        case .success(let url):
-                            let userAvatar = url.absoluteString
-                            
-                            let ref = Database.database().reference().child("users")
-                            ref.child(result.user.uid).updateChildValues(["name" : name, "email": email, "avatar": userAvatar])
-                            self.dismiss(animated: true, completion: nil)
-                        case .failure(let error):
-                            print("error avatar create \(error)")
+        DispatchQueue.main.async {
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                if error == nil {
+                    if let result = result {
+                        self.uploadImage(currentUserId: result.user.uid, photo: AuthVC.imagePicker.image!) { AvatarResult in
+                            switch AvatarResult {
+                            case .success(let url):
+                                let userAvatar = url.absoluteString
+                                
+                                let ref = Database.database().reference().child("users")
+                                ref.child(result.user.uid).updateChildValues(["name" : name, "email": email, "avatar": userAvatar])
+                                self.dismiss(animated: true, completion: nil)
+                            case .failure(let error):
+                                print("error avatar create \(error)")
+                            }
                         }
+                        
+                        
                     }
-                    
-                    
+                } else {
+                    print("error: \(String(describing: error))")
                 }
-            } else {
-                print("error: \(String(describing: error))")
             }
         }
+        
     }
     
     @objc func signIn() {
         let email = textFieldEmail.text!
         let password = textFieldPassword.text!
         
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if error == nil {
-                self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if error == nil {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
+        
     }
     @objc func exitButton() {
                 do {

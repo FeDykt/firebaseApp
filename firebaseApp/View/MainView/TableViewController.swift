@@ -48,9 +48,12 @@ class TableViewController: UIViewController {
             guard let avatar = value["avatar"] as? String else { return }
             guard let image = value["image"] as? String else { return }
             let modelData = Model(name: name, image: image, avatar: avatar)
-            self.model.append(modelData)
             
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.model.append(modelData)
+                self.tableView.reloadData()
+            }
+           
         }
     }
 
