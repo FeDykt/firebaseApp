@@ -37,14 +37,16 @@ class PostTableViewCell: UITableViewCell {
         settingViews()
     }
     
-    func configure(_ model: Model) {
-        let imageUrl = URL(string: model.image)!
-        let imageData = try! Data(contentsOf: imageUrl)
+    func urlToImage (model: String) -> UIImage {
+        let url = URL(string: model)!
+        let imageData = try! Data(contentsOf: url)
         let image = UIImage(data: imageData)
-        
-        let avatarUrl = URL(string: model.avatar)!
-        let avatarData = try! Data(contentsOf: avatarUrl)
-        let avatar = UIImage(data: avatarData)
+        return image!
+    }
+    
+    func configure(_ model: Model) {
+        let image = urlToImage(model: model.image)
+        let avatar = urlToImage(model: model.avatar)
         
         self.postImage.image = image
         self.userImage.image = avatar
@@ -56,7 +58,5 @@ class PostTableViewCell: UITableViewCell {
 extension PostTableViewCell {
     func settingViews() {
         userImage.layer.cornerRadius = userImage.frame.size.width / 2
-
-
     }
 }
