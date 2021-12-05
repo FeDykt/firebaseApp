@@ -12,15 +12,15 @@ import Firebase
 import FirebaseStorage
 
 class AuthVC: UIViewController {
-    let stackViewVertical = UIStackView()
-    var labelLogin        = UILabel()
-    let textFieldLogin    = UITextField()
-    let textFieldEmail    = UITextField()
-    let textFieldPassword = UITextField()
-    let buttonUpload      = UIButton()
-    let buttonSwitch      = UIButton()
-    static let imagePicker       = UIImageView()
-    let imagePickerButton = UIButton()
+    let stackViewVertical  = UIStackView()
+    var labelLogin         = UILabel()
+    let textFieldLogin     = UITextField()
+    let textFieldEmail     = UITextField()
+    let textFieldPassword  = UITextField()
+    let buttonUpload       = UIButton()
+    let buttonSwitch       = UIButton()
+    static let imagePicker = UIImageView()
+    let imagePickerButton  = UIButton()
     
     
     var signUp = true {
@@ -147,7 +147,6 @@ class AuthVC: UIViewController {
 
 //MARK: objc metods
 extension AuthVC {
-    
     @objc func switchAction() {
         signUp = !signUp
     }
@@ -173,7 +172,7 @@ extension AuthVC {
         let email = textFieldEmail.text!
         let password = textFieldPassword.text!
         
-        DispatchQueue.main.async {
+        
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if error == nil {
                     if let result = result {
@@ -196,7 +195,7 @@ extension AuthVC {
                     print("error: \(String(describing: error))")
                 }
             }
-        }
+        
         
     }
     
@@ -204,14 +203,11 @@ extension AuthVC {
         let email = textFieldEmail.text!
         let password = textFieldPassword.text!
         
-        DispatchQueue.main.async {
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if error == nil {
                     self.dismiss(animated: true, completion: nil)
                 }
             }
-        }
-        
     }
     @objc func exitButton() {
                 do {
@@ -238,6 +234,7 @@ extension AuthVC:  UIImagePickerControllerDelegate, UINavigationControllerDelega
 }
 
 extension AuthVC: UITextFieldDelegate {
+    
     func showAlert() {
         let alert = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
@@ -247,11 +244,11 @@ extension AuthVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         if textField == textFieldLogin {
-            textField.resignFirstResponder()
             textFieldEmail.becomeFirstResponder()
         }  else if textField == textFieldEmail {
-            textField.resignFirstResponder()
             textFieldPassword.becomeFirstResponder()
+        } else if textField == textFieldPassword {
+            textFieldPassword.resignFirstResponder()
         }
 
         return true

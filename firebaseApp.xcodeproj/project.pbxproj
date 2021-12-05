@@ -22,6 +22,8 @@
 		BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */; };
 		BFE8DC08275A8B130006AB05 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */; };
 		BFE8DC0A275A98D80006AB05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */; };
+		BFE8DC11275D044E0006AB05 /* AuthVC copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */; };
+		BFE8DC13275D056B0006AB05 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC12275D056B0006AB05 /* Registration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthVC copy.swift"; sourceTree = "<group>"; };
+		BFE8DC12275D056B0006AB05 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		D4BBECC5032D13A942565008 /* Pods-firebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.release.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +122,8 @@
 		BF885D80275960F700482A7E /* AuthView */ = {
 			isa = PBXGroup;
 			children = (
+				BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */,
+				BFE8DC12275D056B0006AB05 /* Registration.swift */,
 				BF885D8C27597DD900482A7E /* AuthVC.swift */,
 			);
 			path = AuthView;
@@ -284,11 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE8DC13275D056B0006AB05 /* Registration.swift in Sources */,
 				BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */,
 				BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */,
 				BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
+				BFE8DC11275D044E0006AB05 /* AuthVC copy.swift in Sources */,
 				BF885D712759588400482A7E /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

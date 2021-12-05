@@ -37,16 +37,16 @@ class PostTableViewCell: UITableViewCell {
         settingViews()
     }
     
-    func urlToImage (model: String) -> UIImage {
-        let url = URL(string: model)!
+    func urlToImage<T: StringProtocol> (_ model: T) -> UIImage {
+        let url = URL(string: model as! String)!
         let imageData = try! Data(contentsOf: url)
         let image = UIImage(data: imageData)
         return image!
     }
     
     func configure(_ model: Model) {
-        let image = urlToImage(model: model.image)
-        let avatar = urlToImage(model: model.avatar)
+        let image = urlToImage(model.image)
+        let avatar = urlToImage(model.avatar)
         
         self.postImage.image = image
         self.userImage.image = avatar
