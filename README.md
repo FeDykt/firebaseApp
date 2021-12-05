@@ -4,5 +4,5 @@ Screenshots:
 ****
 Make sign in view
 
-<img width="450" alt="Снимок экрана 2021-12-05 в 22 46 51" src="https://user-images.githubusercontent.com/16240094/144761322-79d1af4d-0d03-4393-951a-3dd38cdbc345.png"> <img width="450" alt="Снимок экрана 2021-12-05 в 22 46 09" src="https://user-images.githubusercontent.com/16240094/144761324-9c929736-0ea7-48f5-9e08-153a2f73f403.png">
-****
+
+<img width="450" alt="Снимок экрана 2021-12-05 в 22 53 01" src="https://user-images.githubusercontent.com/16240094/144761521-56f7cfd4-24f9-4074-b0a7-a60ccc0d8c14.png"> <img width="450" alt="Снимок экрана 2021-12-05 в 22 52 57" src="https://user-images.githubusercontent.com/16240094/144761524-6a8f7fdb-3d6d-4f94-b51d-02be6d2206ce.png">
