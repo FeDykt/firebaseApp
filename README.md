@@ -1,4 +1,9 @@
-# firebaseApp
+# ![appIcon](https://user-images.githubusercontent.com/16240094/144761366-6df9a414-7ef6-4890-8f50-beab212d70bf.png) 
+firebaseApp - cloneInstagram app
 
-cloneInstagram app 
-![1024](https://user-images.githubusercontent.com/16240094/144498195-52ece606-2354-4a64-ac76-aa6a934f291c.png)
+Screenshots: 
+****
+Make sign in view
+
+
+<img width="200" alt="Снимок экрана 2021-12-05 в 22 53 01" src="https://user-images.githubusercontent.com/16240094/144761521-56f7cfd4-24f9-4074-b0a7-a60ccc0d8c14.png"> <img width="200" alt="Снимок экрана 2021-12-05 в 22 52 04" src="https://user-images.githubusercontent.com/16240094/144761540-43cfee46-45f4-45bb-add4-86eb017b2d25.png">
