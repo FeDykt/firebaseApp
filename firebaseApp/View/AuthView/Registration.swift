@@ -9,12 +9,13 @@ import UIKit
 import SnapKit
 
 class Registraion: UIViewController {
-    let labelTitle = UILabel()
-    let textFieldEmail = UITextField()
-    let textFieldPhone = UITextField()
-    let buttonFieldPhone  = UIButton(type: .custom)
-    let textFieldSms   = UITextField()
-    let buttonFieldSms  = UIButton(type: .custom)
+    var textFieldSetting    = TextFieldSetting()
+    let labelTitle          = UILabel()
+    let textFieldEmail      = UITextField()
+    let textFieldPhone      = UITextField()
+    let buttonFieldPhone    = UIButton(type: .custom)
+    let textFieldSms        = UITextField()
+    let buttonFieldSms      = UIButton(type: .custom)
     
     private let topLayoutGuideBox = UIView()
     
@@ -65,13 +66,11 @@ extension Registraion {
     }
     
     private func settingTextFields() {
-        textFieldSetting(textFieldEmail)
-        textFieldSetting(textFieldPhone)
-        textFieldSetting(textFieldSms)
-        textFieldEmail.placeholder = "email"
-        textFieldPhone.placeholder = "number phone"
+        textFieldSetting.defaultSetting(textFieldEmail, placeholder: "email")
+        textFieldSetting.defaultSetting(textFieldPhone, placeholder: "phone number")
+        textFieldSetting.defaultSetting(textFieldSms, placeholder: "sms code")
+  
         textFieldSms.isHidden = true
-        textFieldSms.placeholder = "sms code"
     }
     
     

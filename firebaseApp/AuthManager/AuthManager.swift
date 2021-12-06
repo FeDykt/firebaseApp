@@ -13,8 +13,15 @@ class AuthManager {
     private let auth = Auth.auth()
     private var verificationId: String?
     
+
+    
     public func authEmail(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error == nil {
+                completion(false)
+                return
+            }
+        }
     }
     
     public func authPhone(phoneNumber: String, completion: @escaping (Bool) -> Void) {

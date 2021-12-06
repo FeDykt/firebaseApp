@@ -10,9 +10,10 @@ import UIKit
 import SnapKit
 import Firebase
 import FirebaseStorage
-import SwiftUI
 
 class AuthVCcopy: UIViewController {
+    var textFieldSetting = TextFieldSetting()
+    
     let stackViewVertical         = UIStackView()
     let logoImage                 = UIImageView()
     let textFieldEmail            = UITextField()
@@ -36,24 +37,22 @@ class AuthVCcopy: UIViewController {
     
         settingViews()
         settingConstrains()
-   
+        settingTextFeilds()
         view.backgroundColor = .white
 
         textFieldEmail.delegate = self
         textFieldPassword.delegate = self
     }
 
-}
 
-    public func textFieldSetting (_ textField: UITextField) {
-            textField.backgroundColor = .systemGray6
-            textField.borderStyle = .roundedRect
-            textField.autocorrectionType = .no
-            textField.backgroundColor = .systemGray6
 }
-
 
 extension AuthVCcopy {
+    func settingTextFeilds() {
+        textFieldSetting.defaultSetting(textFieldEmail, placeholder: "email")
+        textFieldSetting.defaultSetting(textFieldPassword, placeholder: "password")
+    }
+    
     func settingViews() {
         //MARK: StackView Setting
         stackViewVertical.axis = .vertical
@@ -64,16 +63,10 @@ extension AuthVCcopy {
         logoImage.image = UIImage(named: "logotype")
 
         //MARK: TextFields Setting
-        textFieldSetting(textFieldEmail)
-        textFieldSetting(textFieldPassword)
         textFieldPassword.isSecureTextEntry = true
-        
-        textFieldEmail.placeholder = "Введите электронную почту"
-        textFieldPassword.placeholder = "Введите пароль"
-        
+
         //MARK: return key type
-        textFieldEmail.returnKeyType = .next
-        textFieldPassword.returnKeyType = .done
+        
         
         
         //MARK: hide/show password textfield
@@ -153,12 +146,10 @@ extension AuthVCcopy {
     @objc func signIn() {
         let email = textFieldEmail.text!
         let password = textFieldPassword.text!
-        
-            Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                if error == nil {
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
+        AuthManager.shared.authEmail(email: email, password: password) { result in
+            self.dismiss(animated: true, completion: nil)
+        }
+ 
     }
 }
 

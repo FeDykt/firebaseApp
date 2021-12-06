@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		AC821133F36DB2B822EB5A69 /* Pods_firebaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */; };
 		BF538654275D7082009E33E0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF538653275D7082009E33E0 /* AuthManager.swift */; };
+		BF538657275E5DDF009E33E0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF538656275E5DDF009E33E0 /* TextField.swift */; };
+		BF538659275E662C009E33E0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF538658275E662C009E33E0 /* Image.swift */; };
+		BF53865C275E6731009E33E0 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53865B275E6731009E33E0 /* ModelUser.swift */; };
 		BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D5C2759582500482A7E /* AppDelegate.swift */; };
 		BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D5E2759582500482A7E /* SceneDelegate.swift */; };
 		BF885D662759582600482A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF885D652759582600482A7E /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		4ABDA493D2DB3289F0B9DA5E /* Pods-firebaseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.debug.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BF538652275D65B5009E33E0 /* firebaseApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = firebaseApp.entitlements; sourceTree = "<group>"; };
 		BF538653275D7082009E33E0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		BF538656275E5DDF009E33E0 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		BF538658275E662C009E33E0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BF53865B275E6731009E33E0 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		BF885D592759582500482A7E /* firebaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF885D5C2759582500482A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF885D5E2759582500482A7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF538655275E5DC7009E33E0 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				BF538656275E5DDF009E33E0 /* TextField.swift */,
+				BF538658275E662C009E33E0 /* Image.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		BF53865A275E6717009E33E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF53865B275E6731009E33E0 /* ModelUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF53865D275E674A009E33E0 /* AuthManager */ = {
+			isa = PBXGroup;
+			children = (
+				BF538653275D7082009E33E0 /* AuthManager.swift */,
+			);
+			path = AuthManager;
+			sourceTree = "<group>";
+		};
 		BF885D502759582500482A7E = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				BF538652275D65B5009E33E0 /* firebaseApp.entitlements */,
+				BF53865D275E674A009E33E0 /* AuthManager */,
 				BF885D832759612A00482A7E /* Support */,
+				BF53865A275E6717009E33E0 /* Model */,
 				BF885D7F275960F300482A7E /* View */,
-				BF885D652759582600482A7E /* Assets.xcassets */,
+				BF538655275E5DC7009E33E0 /* Extentions */,
 				BF885D672759582600482A7E /* LaunchScreen.storyboard */,
 				BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */,
 				BF885D6A2759582600482A7E /* Info.plist */,
@@ -128,7 +161,6 @@
 			children = (
 				BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */,
 				BFE8DC12275D056B0006AB05 /* Registration.swift */,
-				BF538653275D7082009E33E0 /* AuthManager.swift */,
 				BF885D8C27597DD900482A7E /* AuthVC.swift */,
 			);
 			path = AuthView;
@@ -145,6 +177,7 @@
 		BF885D832759612A00482A7E /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				BF885D652759582600482A7E /* Assets.xcassets */,
 				BF885D5C2759582500482A7E /* AppDelegate.swift */,
 				BF885D5E2759582500482A7E /* SceneDelegate.swift */,
 				BF885D822759610C00482A7E /* Tabbar */,
@@ -298,11 +331,14 @@
 				BFE8DC13275D056B0006AB05 /* Registration.swift in Sources */,
 				BF538654275D7082009E33E0 /* AuthManager.swift in Sources */,
 				BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */,
+				BF538657275E5DDF009E33E0 /* TextField.swift in Sources */,
 				BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */,
 				BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */,
+				BF53865C275E6731009E33E0 /* ModelUser.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
 				BFE8DC11275D044E0006AB05 /* AuthVC copy.swift in Sources */,
+				BF538659275E662C009E33E0 /* Image.swift in Sources */,
 				BF885D712759588400482A7E /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

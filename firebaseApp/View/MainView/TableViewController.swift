@@ -8,17 +8,12 @@
 import UIKit
 import Firebase
 
-struct Model {
-    var name: String
-    var image: String
-    var avatar: String
-}
 
 class TableViewController: UIViewController {
 
     var tableView = UITableView()
     var ref: DatabaseReference!
-    var model: [Model] = []
+    var model: [ModelUser] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +42,7 @@ class TableViewController: UIViewController {
             guard let name = value["name"] as? String else { return }
             guard let avatar = value["avatar"] as? String else { return }
             guard let image = value["image"] as? String else { return }
-            let modelData = Model(name: name, image: image, avatar: avatar)
+            let modelData = ModelUser(name: name, image: image, avatar: avatar)
             
             DispatchQueue.main.async {
                 self.model.append(modelData)

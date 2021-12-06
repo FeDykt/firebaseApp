@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class PostTableViewCell: UITableViewCell {
-    
+    var urlToImage = UrlToImage()
     @IBOutlet weak var userStackView: UIStackView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -37,16 +37,10 @@ class PostTableViewCell: UITableViewCell {
         settingViews()
     }
     
-    func urlToImage<T: StringProtocol> (_ model: T) -> UIImage {
-        let url = URL(string: model as! String)!
-        let imageData = try! Data(contentsOf: url)
-        let image = UIImage(data: imageData)
-        return image!
-    }
     
-    func configure(_ model: Model) {
-        let image = urlToImage(model.image)
-        let avatar = urlToImage(model.avatar)
+    func configure(_ model: ModelUser) {
+        let image = urlToImage.urlToImage(model.image)
+        let avatar = urlToImage.urlToImage(model.avatar)
         
         self.postImage.image = image
         self.userImage.image = avatar
