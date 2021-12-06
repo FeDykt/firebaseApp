@@ -13,12 +13,12 @@ import FirebaseStorage
 import SwiftUI
 
 class AuthVCcopy: UIViewController {
-    let stackViewVertical = UIStackView()
-    let logoImage         = UIImageView()
-    let textFieldEmail    = UITextField()
-    let textFieldPassword = UITextField()
+    let stackViewVertical         = UIStackView()
+    let logoImage                 = UIImageView()
+    let textFieldEmail            = UITextField()
+    let textFieldPassword         = UITextField()
     let buttonTextFieldRightView  = UIButton(type: .custom)
-    var textFieldPasswordHide = true {
+    var textFieldPasswordHide     = true {
        willSet {
            if newValue {
                textFieldPassword.isSecureTextEntry = true
@@ -27,8 +27,9 @@ class AuthVCcopy: UIViewController {
         }
        }
     }
-    let buttonForgotPass = UIButton()
-    let buttonSignIn     = UIButton()
+    let buttonForgotPass         = UIButton()
+    let buttonSignIn             = UIButton()
+    let buttonSignUp             = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,27 +40,32 @@ class AuthVCcopy: UIViewController {
         view.backgroundColor = .white
 
         textFieldEmail.delegate = self
-        textFieldPassword.delegate = self   
+        textFieldPassword.delegate = self
     }
 
+}
+
+    public func textFieldSetting (_ textField: UITextField) {
+            textField.backgroundColor = .systemGray6
+            textField.borderStyle = .roundedRect
+            textField.autocorrectionType = .no
+            textField.backgroundColor = .systemGray6
+}
+
+
+extension AuthVCcopy {
     func settingViews() {
         //MARK: StackView Setting
         stackViewVertical.axis = .vertical
         stackViewVertical.spacing = 10
         stackViewVertical.alignment = .lastBaseline
-        
+    
         //MARK: Logotype
         logoImage.image = UIImage(named: "logotype")
 
         //MARK: TextFields Setting
-        textFieldEmail.borderStyle = .roundedRect
-        textFieldEmail.keyboardType = .emailAddress
-        textFieldEmail.autocorrectionType = .no
-        textFieldEmail.backgroundColor = .systemGray6
-        
-        textFieldPassword.backgroundColor = .systemGray6
-        textFieldPassword.borderStyle = .roundedRect
-        textFieldPassword.autocorrectionType = .no
+        textFieldSetting(textFieldEmail)
+        textFieldSetting(textFieldPassword)
         textFieldPassword.isSecureTextEntry = true
         
         textFieldEmail.placeholder = "Введите электронную почту"
@@ -81,11 +87,15 @@ class AuthVCcopy: UIViewController {
         
         //MARK: forgotPass / signUp button
         buttonForgotPass.setTitle("Забыли пароль?", for: .normal)
+        buttonForgotPass.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         buttonForgotPass.configuration = .plain()
         
         buttonSignIn.configuration = .filled()
         buttonSignIn.setTitle("Войти", for: .normal)
         buttonSignIn.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+        
+        buttonSignUp.configuration = .plain()
+        buttonSignUp.setTitle("Зарегистрироваться", for: .normal)
                 
         //MARK: ADD subviews
         view.addSubview(stackViewVertical)
@@ -94,6 +104,7 @@ class AuthVCcopy: UIViewController {
         stackViewVertical.addArrangedSubview(textFieldPassword)
         stackViewVertical.addArrangedSubview(buttonForgotPass)
         stackViewVertical.addArrangedSubview(buttonSignIn)
+        view.addSubview(buttonSignUp)
     }
     
     func settingConstrains() {
@@ -118,9 +129,13 @@ class AuthVCcopy: UIViewController {
         buttonForgotPass.snp.makeConstraints { make in
             make.trailing.equalTo(0).inset(-10)
         }
+        buttonSignUp.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(30)
+        }
     }
-    
 }
+
 
 //MARK: objc metods
 extension AuthVCcopy {

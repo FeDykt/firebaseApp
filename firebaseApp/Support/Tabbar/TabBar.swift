@@ -44,7 +44,7 @@ class TabBar: UITabBarController {
                 createNavController(for: AuthVC(),
                                        title: NSLocalizedString("Search", comment: ""),
                                        image: UIImage(systemName: "magnifyingglass")!),
-                createNavController(for: AuthVC(),
+                createNavController(for: Registraion(),
                                        title: NSLocalizedString("Reals", comment: ""),
                                        image: UIImage(systemName: "play.rectangle")!),
                 createNavController(for: AuthVCcopy(),

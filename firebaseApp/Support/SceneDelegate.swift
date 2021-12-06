@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.translatesAutoresizingMaskIntoConstraints = false
         let mainVC = TabBar()
         let authVC = AuthVC()
-        let authCopy = AuthVCcopy()
+        let authCopy = Registraion()
         Auth.auth().addStateDidChangeListener { auth, user in
             if user == nil {
                 self.window?.rootViewController = authCopy
