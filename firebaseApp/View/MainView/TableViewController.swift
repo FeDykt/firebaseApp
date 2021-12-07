@@ -14,13 +14,20 @@ class TableViewController: UIViewController {
     var tableView = UITableView()
     var ref: DatabaseReference!
     var model: [ModelUser] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getAllData()
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createTableView()
-        getAllData()
- 
+        
+        
         view.backgroundColor = .white
  
     }
@@ -37,23 +44,22 @@ class TableViewController: UIViewController {
         ref = Database.database().reference().child("users")
         ref.observe(.childAdded) { [weak self] snapshot in
             guard let self = self else { return }
-            
+
             guard let value = snapshot.value as? [String : Any] else { print("error value"); return }
             guard let name = value["name"] as? String else { return }
             guard let avatar = value["avatar"] as? String else { return }
             guard let image = value["image"] as? String else { return }
             let modelData = ModelUser(name: name, image: image, avatar: avatar)
+            self.model.append(modelData)
             
             DispatchQueue.main.async {
-                self.model.append(modelData)
-                self.tableView.reloadData()
+             self.tableView.reloadData()
             }
-           
         }
-    }
-
     
+    }
 }
+
 
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

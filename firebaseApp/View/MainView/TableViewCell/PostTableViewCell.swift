@@ -37,7 +37,6 @@ class PostTableViewCell: UITableViewCell {
         settingViews()
     }
     
-    
     func configure(_ model: ModelUser) {
         let image = urlToImage.urlToImage(model.image)
         let avatar = urlToImage.urlToImage(model.avatar)

@@ -14,4 +14,7 @@ struct TextFieldSetting {
         textField.borderStyle = .roundedRect
         textField.autocorrectionType = .no
    }
+    mutating func hiden(_ textField: UITextField, bool: Bool) {
+        textField.isHidden = bool
+    }
 }

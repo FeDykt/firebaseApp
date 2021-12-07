@@ -12,6 +12,7 @@
 		BF538657275E5DDF009E33E0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF538656275E5DDF009E33E0 /* TextField.swift */; };
 		BF538659275E662C009E33E0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF538658275E662C009E33E0 /* Image.swift */; };
 		BF53865C275E6731009E33E0 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53865B275E6731009E33E0 /* ModelUser.swift */; };
+		BF538662275FAB0C009E33E0 /* AuthVCcopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF538661275FAB0C009E33E0 /* AuthVCcopy.swift */; };
 		BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D5C2759582500482A7E /* AppDelegate.swift */; };
 		BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D5E2759582500482A7E /* SceneDelegate.swift */; };
 		BF885D662759582600482A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF885D652759582600482A7E /* Assets.xcassets */; };
@@ -21,12 +22,11 @@
 		BF885D7827595D3A00482A7E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7727595D3A00482A7E /* FirebaseDatabase */; };
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
-		BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF885D8C27597DD900482A7E /* AuthVC.swift */; };
 		BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC01275A7C210006AB05 /* TableViewController.swift */; };
 		BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */; };
 		BFE8DC08275A8B130006AB05 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */; };
 		BFE8DC0A275A98D80006AB05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */; };
-		BFE8DC11275D044E0006AB05 /* AuthVC copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */; };
+		BFE8DC11275D044E0006AB05 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC10275D044E0006AB05 /* AuthVC.swift */; };
 		BFE8DC13275D056B0006AB05 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC12275D056B0006AB05 /* Registration.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,7 @@
 		BF538656275E5DDF009E33E0 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		BF538658275E662C009E33E0 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		BF53865B275E6731009E33E0 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		BF538661275FAB0C009E33E0 /* AuthVCcopy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthVCcopy.swift; path = ../../../../../AuthVCcopy.swift; sourceTree = "<group>"; };
 		BF885D592759582500482A7E /* firebaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF885D5C2759582500482A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF885D5E2759582500482A7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,12 +45,11 @@
 		BF885D682759582600482A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF885D6A2759582600482A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		BF885D8C27597DD900482A7E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		BFE8DC01275A7C210006AB05 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		BFE8DC09275A98D80006AB05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthVC copy.swift"; sourceTree = "<group>"; };
+		BFE8DC10275D044E0006AB05 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		BFE8DC12275D056B0006AB05 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		D4BBECC5032D13A942565008 /* Pods-firebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseApp.release.xcconfig"; path = "Target Support Files/Pods-firebaseApp/Pods-firebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 		E900E28B867DBA8D6BCF1F18 /* Pods_firebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +113,14 @@
 			path = AuthManager;
 			sourceTree = "<group>";
 		};
+		BF53865E275E6CA9009E33E0 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BFE8DC12275D056B0006AB05 /* Registration.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		BF885D502759582500482A7E = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +160,7 @@
 			children = (
 				BFE8DC00275A7C050006AB05 /* MainView */,
 				BF885D80275960F700482A7E /* AuthView */,
+				BF53865E275E6CA9009E33E0 /* Registration */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,9 +168,8 @@
 		BF885D80275960F700482A7E /* AuthView */ = {
 			isa = PBXGroup;
 			children = (
-				BFE8DC10275D044E0006AB05 /* AuthVC copy.swift */,
-				BFE8DC12275D056B0006AB05 /* Registration.swift */,
-				BF885D8C27597DD900482A7E /* AuthVC.swift */,
+				BF538661275FAB0C009E33E0 /* AuthVCcopy.swift */,
+				BFE8DC10275D044E0006AB05 /* AuthVC.swift */,
 			);
 			path = AuthView;
 			sourceTree = "<group>";
@@ -330,14 +338,14 @@
 			files = (
 				BFE8DC13275D056B0006AB05 /* Registration.swift in Sources */,
 				BF538654275D7082009E33E0 /* AuthManager.swift in Sources */,
-				BF885D8E27597DD900482A7E /* AuthVC.swift in Sources */,
 				BF538657275E5DDF009E33E0 /* TextField.swift in Sources */,
 				BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */,
 				BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */,
 				BF53865C275E6731009E33E0 /* ModelUser.swift in Sources */,
+				BF538662275FAB0C009E33E0 /* AuthVCcopy.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
-				BFE8DC11275D044E0006AB05 /* AuthVC copy.swift in Sources */,
+				BFE8DC11275D044E0006AB05 /* AuthVC.swift in Sources */,
 				BF538659275E662C009E33E0 /* Image.swift in Sources */,
 				BF885D712759588400482A7E /* TabBar.swift in Sources */,
 			);
