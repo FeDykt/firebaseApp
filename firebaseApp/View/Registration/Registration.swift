@@ -46,6 +46,9 @@ class Registraion: UIViewController {
         textFieldSms.isHidden = true
         textFieldPassword.isHidden = true
         textFieldEmail.isHidden = true
+        
+        textFieldEmail.keyboardType = .emailAddress
+        textFieldPassword.isSecureTextEntry = true
     }
 
 }
@@ -223,7 +226,9 @@ extension Registraion {
         guard let self = self  else { return }
         guard success else { return }
         DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
+            let vc = TableViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
         }
        }
     }
@@ -256,7 +261,12 @@ extension Registraion {
                         if let result = result {
                             let ref = Database.database().reference().child("users")
                             ref.child(result.user.uid).updateChildValues(["name" : name, "email": email])
-                            self.dismiss(animated: true, completion: nil)
+                            
+                            DispatchQueue.main.async {
+                                let vc = TableViewController()
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc, animated: true, completion: nil)
+                            }
                         }
                     } else {
                         print("error: \(String(describing: error))")
