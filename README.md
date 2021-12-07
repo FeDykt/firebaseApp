@@ -11,5 +11,5 @@ Make sign in view
 ****
 Make sign Up phone number
 
-<img width="200" alt="Снимок экрана 2021-12-05 в 22 52 04" src="https://user-images.githubusercontent.com/16240094/145045376-549cade3-79d8-4bf4-8a15-f6dafec4d39d.gif">
+https://user-images.githubusercontent.com/16240094/145046162-847caf4d-cdfe-4f73-80e8-d7b6f4785e0c.mov
 
