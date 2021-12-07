@@ -40,10 +40,12 @@ class Registraion: UIViewController {
         textFieldEmail.delegate = self
         textFieldPhone.delegate = self
         
-        textFieldSetting.hiden(textFieldEmail, bool: true)
-        textFieldSetting.hiden(textFieldSms, bool: true)
+    
         buttonEmail.isHidden = true
         
+        textFieldSms.isHidden = true
+        textFieldPassword.isHidden = true
+        textFieldEmail.isHidden = true
     }
 
 }
@@ -57,9 +59,16 @@ extension Registraion {
         view.addSubview(topLayoutGuideBox)
         topLayoutGuideBox.addSubview(segmentControl)
         topLayoutGuideBox.addSubview(labelTitle)
+        //Email signUp
+        topLayoutGuideBox.addSubview(textFieldName)
         topLayoutGuideBox.addSubview(textFieldEmail)
+        topLayoutGuideBox.addSubview(textFieldPassword)
+        
+        //Phone signUp
         topLayoutGuideBox.addSubview(textFieldPhone)
         topLayoutGuideBox.addSubview(textFieldSms)
+        
+        //Button
         topLayoutGuideBox.addSubview(buttonEmail)
         topLayoutGuideBox.addSubview(buttonPhone)
     }
@@ -72,7 +81,9 @@ extension Registraion {
     }
     
     private func settingTextFields() {
+        textFieldSetting.defaultSetting(textFieldName, placeholder: "user name")
         textFieldSetting.defaultSetting(textFieldEmail, placeholder: "email")
+        textFieldSetting.defaultSetting(textFieldPassword, placeholder: "password")
         textFieldSetting.defaultSetting(textFieldPhone, placeholder: "phone number")
         textFieldSetting.defaultSetting(textFieldSms, placeholder: "sms code")
         
@@ -117,7 +128,17 @@ extension Registraion {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().inset(40)
         }
+        textFieldName.snp.makeConstraints { make in
+            make.top.equalTo(segmentControl).inset(60)
+            make.width.equalToSuperview().inset(40)
+            make.centerX.equalToSuperview()
+        }
         textFieldEmail.snp.makeConstraints { make in
+            make.top.equalTo(segmentControl).inset(60)
+            make.width.equalToSuperview().inset(40)
+            make.centerX.equalToSuperview()
+        }
+        textFieldPassword.snp.makeConstraints { make in
             make.top.equalTo(segmentControl).inset(60)
             make.width.equalToSuperview().inset(40)
             make.centerX.equalToSuperview()
@@ -155,18 +176,37 @@ extension Registraion {
     @objc func segmentAction(target: UISegmentedControl) {
         switch target.selectedSegmentIndex {
         case 0:
-            textFieldSetting.hiden(textFieldEmail, bool: true)
-            textFieldSetting.hiden(textFieldPhone, bool: false)
-            textFieldSetting.hiden(textFieldSms, bool: true)
+            textFieldEmail.isHidden = true
+            textFieldPassword.isHidden = true
+            textFieldSms.isHidden = true
             buttonEmail.isHidden = true
+            
+            textFieldPhone.isHidden = false
             buttonPhone.isHidden = false
         case 1:
-            textFieldSetting.hiden(textFieldEmail, bool: false)
-            textFieldSetting.hiden(textFieldPhone, bool: true)
-            textFieldSetting.hiden(textFieldSms, bool: true)
+            textFieldEmail.isHidden = true
+            textFieldPassword.isHidden = true
+            textFieldPhone.isHidden = true
+            textFieldSms.isHidden = true
+            
+            textFieldName.isHidden = false
             buttonEmail.isHidden = false
             buttonPhone.isHidden = true
         default: break
+        }
+    }
+    
+    
+    //MARK: Phone button action
+    @objc func phoneNextAction() {
+        let buttonText = buttonPhone.titleLabel?.text
+        buttonPhone.setTitle("Далее", for: .normal)
+        textFieldPhone.isHidden = true
+        textFieldSms.isHidden = false
+        signUpSmsVerification()
+        
+        if buttonText == "Далее" {
+            signUpSms()
         }
     }
     
@@ -188,62 +228,54 @@ extension Registraion {
        }
     }
     
-    
-    
     //MARK: Registration email
-    @objc func phoneNextAction() {
-        let buttonText = buttonPhone.titleLabel?.text
-        buttonPhone.setTitle("Далее", for: .normal)
-        textFieldPhone.isHidden = true
-        textFieldSms.isHidden = false
-        signUpSmsVerification()
-        
-        if buttonText == "Далее" {
-            signUpSms()
-        }
-    }
-    
     @objc func emailNextAction() {
         let buttonText = buttonEmail.titleLabel?.text
-        print("asd")
-        buttonEmail.setTitle("Далее", for: .normal)
         
+        textFieldEmail.isHidden = false
+        textFieldPassword.isHidden = true
+        textFieldName.isHidden = true
         if buttonText == "Далее" {
-            print("button3")
+            textFieldName.isHidden = true
+            textFieldPassword.isHidden = true
+            textFieldEmail.isHidden = false
+            buttonEmail.setTitle("Далее2", for: .normal)
+        } else if buttonText == "Далее2" {
+            textFieldName.isHidden = true
+            textFieldEmail.isHidden = true
+            textFieldPassword.isHidden = false
+            buttonEmail.setTitle("Далее3", for: .normal)
+            
+        } else if buttonText == "Далее3" {
+            let name = textFieldName.text!
+            let email = textFieldEmail.text!
+            let password = textFieldPassword.text!
+            
+                Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                    if error == nil {
+                        if let result = result {
+                            let ref = Database.database().reference().child("users")
+                            ref.child(result.user.uid).updateChildValues(["name" : name, "email": email])
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    } else {
+                        print("error: \(String(describing: error))")
+                    }
+                }
         }
     }
     
-    @objc func signUpEmail() {
-        let name = textFieldName.text!
-        let email = textFieldEmail.text!
-        let password = textFieldPassword.text!
-        
-            Auth.auth().createUser(withEmail: email, password: password) { result, error in
-                if error == nil {
-                    if let result = result {
-                        let ref = Database.database().reference().child("users")
-                        ref.child(result.user.uid).updateChildValues(["name" : name, "email": email])
-                        self.dismiss(animated: true, completion: nil)
-                        
-                    }
-                } else {
-                    print("error: \(String(describing: error))")
-                }
-            }
-        
-        
-    }
+   
 }
 
 extension Registraion: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
-        if textField == textFieldSms {
+        if textField == textFieldPhone {
             print("phone")
         } else if textField == textFieldSms {
             print("sms")
         }
-
         
         return true
     }
