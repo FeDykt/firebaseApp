@@ -7,19 +7,22 @@ Make sign in view
 
 ****
 sign in email
-https://user-images.githubusercontent.com/16240094/145084693-d0f2896f-06bd-4eba-b3ec-111fab74d850.mov
 
-<img width="200" alt="Снимок экрана 2021-12-05 в 22 53 01" src="https://user-images.githubusercontent.com/16240094/144761521-56f7cfd4-24f9-4074-b0a7-a60ccc0d8c14.png"> <img width="200" alt="Снимок экрана 2021-12-05 в 22 52 04" src="https://user-images.githubusercontent.com/16240094/144761540-43cfee46-45f4-45bb-add4-86eb017b2d25.png">
+<img src="https://user-images.githubusercontent.com/16240094/145220180-e3fe680b-c341-4de8-9930-2478c0650b48.gif" width="300" alt="">
 
 ****
 phone signup
-https://user-images.githubusercontent.com/16240094/145085214-37931968-236c-4b82-86dc-e79504369efa.mov
+
+![phone](https://user-images.githubusercontent.com/16240094/145220798-d743b09d-5c5f-4553-9643-e1c2769cc3d1.gif)
+
+
 
 
 ****
 email signup
 
-https://user-images.githubusercontent.com/16240094/145084713-f0d3c16a-47b4-4912-8bd0-a591aec08265.MP4
+<img src="https://user-images.githubusercontent.com/16240094/145219947-069926d5-a32c-4d8f-8819-f5894f234582.gif" width="300" alt="">
+
 
 
 
