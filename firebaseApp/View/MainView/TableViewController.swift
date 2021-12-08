@@ -26,8 +26,6 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         
         createTableView()
-        
-        
         view.backgroundColor = .white
  
     }
@@ -51,13 +49,13 @@ class TableViewController: UIViewController {
             guard let image = value["image"] as? String else { return }
             let modelData = ModelUser(name: name, image: image, avatar: avatar)
             self.model.append(modelData)
-            
+
             DispatchQueue.main.async {
              self.tableView.reloadData()
             }
         }
+     }
     
-    }
 }
 
 

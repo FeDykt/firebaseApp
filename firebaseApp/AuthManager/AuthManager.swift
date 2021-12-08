@@ -12,7 +12,6 @@ class AuthManager {
     static let shared = AuthManager()
     private let auth = Auth.auth()
     private var verificationId: String?
-    
 
     
     public func authEmail(email: String, password: String, completion: @escaping (Bool) -> Void) {

@@ -203,12 +203,12 @@ extension Registraion {
     //MARK: Phone button action
     @objc func phoneNextAction() {
         let buttonText = buttonPhone.titleLabel?.text
-        buttonPhone.setTitle("Далее", for: .normal)
+        buttonPhone.setTitle("Далеe", for: .normal)
         textFieldPhone.isHidden = true
         textFieldSms.isHidden = false
         signUpSmsVerification()
         
-        if buttonText == "Далее" {
+        if buttonText == "Далеe" {
             signUpSms()
         }
     }
@@ -244,14 +244,14 @@ extension Registraion {
             textFieldName.isHidden = true
             textFieldPassword.isHidden = true
             textFieldEmail.isHidden = false
-            buttonEmail.setTitle("Далее2", for: .normal)
-        } else if buttonText == "Далее2" {
+            buttonEmail.setTitle("Далеe", for: .normal)
+        } else if buttonText == "Далеe" {
             textFieldName.isHidden = true
             textFieldEmail.isHidden = true
             textFieldPassword.isHidden = false
-            buttonEmail.setTitle("Далее3", for: .normal)
+            buttonEmail.setTitle("Далeе", for: .normal)
             
-        } else if buttonText == "Далее3" {
+        } else if buttonText == "Далeе" {
             let name = textFieldName.text!
             let email = textFieldEmail.text!
             let password = textFieldPassword.text!

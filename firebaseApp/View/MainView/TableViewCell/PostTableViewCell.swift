@@ -46,6 +46,9 @@ class PostTableViewCell: UITableViewCell {
         self.userName.text = model.name
     }
     
+    @IBAction func buttonAction(_ sender: Any) {
+        print("hello")
+    }
 }
 
 extension PostTableViewCell {
