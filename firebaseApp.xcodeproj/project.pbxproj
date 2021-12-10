@@ -21,6 +21,9 @@
 		BF885D7827595D3A00482A7E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7727595D3A00482A7E /* FirebaseDatabase */; };
 		BF885D7A27595D3A00482A7E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7927595D3A00482A7E /* FirebaseFirestore */; };
 		BF885D7C27595D3A00482A7E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BF885D7B27595D3A00482A7E /* FirebaseStorage */; };
+		BF8E8EA727613F6D0045576F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E8EA627613F6D0045576F /* PostViewController.swift */; };
+		BF8E8EB027615BF70045576F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E8EAE27615BF70045576F /* CollectionViewCell.swift */; };
+		BF8E8EB127615BF70045576F /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8E8EAF27615BF70045576F /* CollectionViewCell.xib */; };
 		BFE8DC02275A7C210006AB05 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC01275A7C210006AB05 /* TableViewController.swift */; };
 		BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */; };
 		BFE8DC08275A8B130006AB05 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */; };
@@ -43,6 +46,9 @@
 		BF885D682759582600482A7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF885D6A2759582600482A7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF885D702759588400482A7E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		BF8E8EA627613F6D0045576F /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		BF8E8EAE27615BF70045576F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BF8E8EAF27615BF70045576F /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		BFE8DC01275A7C210006AB05 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BFE8DC05275A8B130006AB05 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		BFE8DC06275A8B130006AB05 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 		BF885D7F275960F300482A7E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF8E8EA527613F4D0045576F /* Post */,
 				BFE8DC00275A7C050006AB05 /* MainView */,
 				BF885D80275960F700482A7E /* AuthView */,
 				BF53865E275E6CA9009E33E0 /* Registration */,
@@ -188,6 +195,16 @@
 				BF885D822759610C00482A7E /* Tabbar */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		BF8E8EA527613F4D0045576F /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				BF8E8EA627613F6D0045576F /* PostViewController.swift */,
+				BF8E8EAE27615BF70045576F /* CollectionViewCell.swift */,
+				BF8E8EAF27615BF70045576F /* CollectionViewCell.xib */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		BFE8DC00275A7C050006AB05 /* MainView */ = {
@@ -281,6 +298,7 @@
 				BFE8DC08275A8B130006AB05 /* PostTableViewCell.xib in Resources */,
 				BF885D662759582600482A7E /* Assets.xcassets in Resources */,
 				BFE8DC0A275A98D80006AB05 /* GoogleService-Info.plist in Resources */,
+				BF8E8EB127615BF70045576F /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8E8EA727613F6D0045576F /* PostViewController.swift in Sources */,
 				BFE8DC13275D056B0006AB05 /* Registration.swift in Sources */,
 				BF538654275D7082009E33E0 /* AuthManager.swift in Sources */,
 				BF538657275E5DDF009E33E0 /* TextField.swift in Sources */,
@@ -340,6 +359,7 @@
 				BFE8DC07275A8B130006AB05 /* PostTableViewCell.swift in Sources */,
 				BF53865C275E6731009E33E0 /* ModelUser.swift in Sources */,
 				BF885D5D2759582500482A7E /* AppDelegate.swift in Sources */,
+				BF8E8EB027615BF70045576F /* CollectionViewCell.swift in Sources */,
 				BF885D5F2759582500482A7E /* SceneDelegate.swift in Sources */,
 				BFE8DC11275D044E0006AB05 /* AuthVC.swift in Sources */,
 				BF538659275E662C009E33E0 /* Image.swift in Sources */,

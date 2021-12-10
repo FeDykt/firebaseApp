@@ -15,16 +15,11 @@ class TableViewController: UIViewController {
     var ref: DatabaseReference!
     var model: [ModelUser] = []
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        getAllData()
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        getAllData()
         createTableView()
         view.backgroundColor = .white
  

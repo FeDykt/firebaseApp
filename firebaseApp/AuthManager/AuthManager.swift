@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 class AuthManager {
     static let shared = AuthManager()
